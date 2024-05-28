@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Switcher</title>
+</head>
+
+<body>
+    <div id="imageContainer" style="width: 700px; height: 200px; overflow: hidden;">
+        <img id="switchingImage" src="https://www.marionfl.org/home/showpublishedimage/24416/638255272671670000"
+            alt="Image" style="width: 100%;">
+    </div>
+
+    <script>
+        var images = [
+            'https://www.marionfl.org/home/showpublishedimage/24416/638255272671670000',
+            'https://www.marionfl.org/home/showpublishedimage/22636/637484008075430000'
+        ];
+        var currentIndex = 0;
+        var imageElement = document.getElementById('switchingImage');
+
+        setInterval(function () {
+            currentIndex = (currentIndex + 1) % images.length;
+            imageElement.src = images[currentIndex];
+        }, 5000); // 5000ms = 5 seconds
+    </script>
+</body>
+
+</html>
