@@ -10,14 +10,17 @@
         /* Ensure the container takes the full width of the screen */
         #imageContainer {
             width: 100%;
-            height: auto;
+            max-width: 2016px; /* 21 inches */
+            height: 288px; /* 3 inches */
             overflow: hidden;
+            margin: 0 auto; /* Center the container on the page */
         }
 
-        /* Ensure the image fills the width but maintains its aspect ratio */
+        /* Ensure the image fills the container but maintains its aspect ratio */
         #switchingImage {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover; /* Scale the image while covering the entire container */
         }
 
         /* Remove margins and padding from the body for a true full-width experience */
