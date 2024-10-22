@@ -6,21 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Switcher</title>
+    <style>
+        /* Ensure the container takes the full width of the screen */
+        #imageContainer {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        /* Ensure the image fills the width but maintains its aspect ratio */
+        #switchingImage {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Remove margins and padding from the body for a true full-width experience */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="imageContainer" style="width: 500px; height: 200px; overflow: hidden;">
+    <div id="imageContainer">
         <img id="switchingImage" src="https://www.marionfl.org/home/showpublishedimage/24416/638255272671670000"
-            alt="Fire Truck" style="width: 100%; height: auto;">
+            alt="Fire Truck">
     </div>
 
     <script>
         var images = [
             'https://github.com/AntonyGIS/Image/blob/main/Court.png?raw=true',
-'https://github.com/AntonyGIS/Image/blob/main/SilverSpringsBoat.png?raw=true',
-'https://github.com/AntonyGIS/Image/blob/main/busy%20200.png?raw=true',
-'https://github.com/AntonyGIS/Image/blob/main/front_Plaza.png?raw=true',
-            
+            'https://github.com/AntonyGIS/Image/blob/main/SilverSpringsBoat.png?raw=true',
+            'https://github.com/AntonyGIS/Image/blob/main/busy%20200.png?raw=true',
+            'https://github.com/AntonyGIS/Image/blob/main/front_Plaza.png?raw=true',
+            'https://github.com/AntonyGIS/Image/blob/main/A_Waldo.png?raw=true'
         ];
         var currentIndex = 0;
         var imageElement = document.getElementById('switchingImage');
