@@ -6,55 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Switcher</title>
-    <style>
-        /* Ensure the container takes the full width of the screen */
-        #imageContainer {
-            width: 100%;
-            max-width: 2016px; /* 21 inches */
-            height: 192px; /* 2 inches */
-            overflow: hidden;
-            margin: 0 auto; /* Center the container on the page */
-            border: 2px solid #333; /* Optional: add a border around the image */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow effect */
-        }
-
-        /* Ensure the image fills the container but maintains its aspect ratio */
-        #switchingImage {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Scale the image while covering the entire container */
-            transition: opacity 1s ease-in-out; /* Optional: smooth transition effect */
-        }
-
-        /* Remove margins and padding from the body for a true full-width experience */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4; /* Optional: background color */
-            font-family: Arial, sans-serif; /* Optional: change the font */
-        }
-
-        /* Optional: Text or button styling (if you want to add controls in the future) */
-        .button {
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #0056b3;
-        }
-    </style>
 </head>
 
 <body>
-    <div id="imageContainer">
-        <img id="switchingImage" src="https://www.marionfl.org/home/showpublishedimage/24416/638255272671670000"
-            alt="Fire Truck">
+    <div id="imageContainer" style="width: 21in; height: 2in; overflow: hidden; margin: 0 auto; border: 2px solid #333;">
+        <img id="switchingImage" src="path/to/your/image1.jpg" alt="Image 1" style="width: 100%; height: 100%; object-fit: cover; transition: opacity 1s ease-in-out;">
     </div>
 
     <script>
@@ -70,11 +26,11 @@
 
         setInterval(function () {
             currentIndex = (currentIndex + 1) % images.length;
-            imageElement.src = images[currentIndex];
-            imageElement.style.opacity = 0; /* Optional: fade-out effect */
+            imageElement.style.opacity = 0; // Optional: fade-out effect
             setTimeout(function () {
-                imageElement.style.opacity = 1; /* Optional: fade-in effect */
-            }, 100); /* Adjust timing to match your interval */
+                imageElement.src = images[currentIndex];
+                imageElement.style.opacity = 1; // Optional: fade-in effect
+            }, 500); // Adjust timing to match your interval
         }, 10000); // 10000ms = 10 seconds
     </script>
 </body>
