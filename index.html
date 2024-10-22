@@ -6,20 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Switcher</title>
+    <style>
+        body {
+            margin: 0; /* Remove default body margin */
+            padding: 0; /* Remove default body padding */
+            display: flex;
+            justify-content: center; /* Center the container horizontally */
+            align-items: center; /* Center the container vertically */
+            height: 100vh; /* Full viewport height */
+            background-color: #f4f4f4; /* Light background color */
+        }
+
+        #imageContainer {
+            width: 21in; /* Set the width to 21 inches */
+            height: 2in; /* Set the height to 2 inches */
+            overflow: hidden; /* Hide overflow to prevent scrolling */
+            border: 2px solid #333; /* Border around the image container */
+            position: relative; /* Position relative for absolute positioning of the image */
+        }
+
+        #switchingImage {
+            width: 100%; /* Make image width 100% of the container */
+            height: 100%; /* Make image height 100% of the container */
+            object-fit: contain; /* Maintain aspect ratio, ensure image fits within the box */
+            position: absolute; /* Position the image absolutely */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
+        }
+    </style>
 </head>
 
 <body>
-    <div id="imageContainer" style="width: 20in; height: 2in; overflow: hidden; margin: 0 auto; border: 2px solid #333; position: relative;">
-        <img id="switchingImage" src="https://github.com/AntonyGIS/Image/blob/main/Airport.png?raw=true" alt="Image 1" style="width: 100%; height: 100%; object-fit: contain; transition: opacity 1s ease-in-out; position: absolute; top: 0; left: 0;">
+    <div id="imageContainer">
+        <img id="switchingImage" src="https://github.com/AntonyGIS/Image/blob/main/Airport.png?raw=true" alt="Image 1">
     </div>
 
     <script>
         var images = [
             'https://github.com/AntonyGIS/Image/blob/main/Airport.png?raw=true',
+            'https://github.com/AntonyGIS/Image/blob/main/No%20boat%20over%20Spring%202.png?raw=true',
+            'https://github.com/AntonyGIS/Image/blob/main/Public%20Transit.png?raw=true',
             'https://github.com/AntonyGIS/Image/blob/main/busy%20200.png?raw=true',
-            'https://github.com/AntonyGIS/Image/blob/main/Court.png?raw=true',
-            'https://github.com/AntonyGIS/Image/blob/main/No%20boat%20over%20spring%202.png?raw=true',
-            'https://github.com/AntonyGIS/Image/blob/main/Public%20Transit.png?raw=true'
+            'https://github.com/AntonyGIS/Image/blob/main/Court.png?raw=true'
         ];
         var currentIndex = 0;
         var imageElement = document.getElementById('switchingImage');
@@ -30,7 +59,7 @@
             setTimeout(function () {
                 imageElement.src = images[currentIndex];
                 imageElement.style.opacity = 1; // Optional: fade-in effect
-            }, 500); // Adjust timing to match your interval
+            }, 500); // Timing to match the fade-out effect
         }, 10000); // 10000ms = 10 seconds
     </script>
 </body>
