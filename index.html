@@ -8,30 +8,30 @@
     <title>Image Switcher</title>
     <style>
         body {
-            margin: 0; /* Remove default body margin */
-            padding: 0; /* Remove default body padding */
+            margin: 0;
+            padding: 0;
             display: flex;
-            justify-content: center; /* Center the container horizontally */
-            align-items: center; /* Center the container vertically */
-            height: 100vh; /* Full viewport height */
-            background-color: #f4f4f4; /* Light background color */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
         }
 
         #imageContainer {
             width: 21in; /* Set the width to 21 inches */
-            height: 2in; /* Set the height to 2 inches */
+            height: 1.5in; /* Set the height to 1.5 inches */
             overflow: hidden; /* Hide overflow to prevent scrolling */
             border: 2px solid #333; /* Border around the image container */
-            position: relative; /* Position relative for absolute positioning of the image */
+            position: relative;
         }
 
         #switchingImage {
             width: 100%; /* Make image width 100% of the container */
             height: 100%; /* Make image height 100% of the container */
             object-fit: contain; /* Maintain aspect ratio, ensure image fits within the box */
-            position: absolute; /* Position the image absolutely */
-            top: 0; /* Align to the top */
-            left: 0; /* Align to the left */
+            position: absolute;
+            top: 0;
+            left: 0;
             transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
         }
     </style>
@@ -55,12 +55,12 @@
 
         setInterval(function () {
             currentIndex = (currentIndex + 1) % images.length;
-            imageElement.style.opacity = 0; // Optional: fade-out effect
+            imageElement.style.opacity = 0; // Fade-out effect
             setTimeout(function () {
                 imageElement.src = images[currentIndex];
-                imageElement.style.opacity = 1; // Optional: fade-in effect
+                imageElement.style.opacity = 1; // Fade-in effect
             }, 500); // Timing to match the fade-out effect
-        }, 10000); // 10000ms = 10 seconds
+        }, 10000); // 10 seconds
     </script>
 </body>
 
