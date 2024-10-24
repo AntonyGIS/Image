@@ -18,21 +18,21 @@
         }
 
         #imageContainer {
-            width: 21in; /* Set the width to 21 inches */
-            height: 1.5in; /* Set the height to 1.5 inches */
-            overflow: hidden; /* Hide overflow to prevent scrolling */
-            border: 2px solid #333; /* Border around the image container */
+            width: 100%; /* Let the container fill the embed widget width */
+            height: 100%; /* Let the container fill the embed widget height */
+            overflow: hidden; /* Hide any overflow */
+            border: none; /* Remove any borders for a cleaner fit */
             position: relative;
         }
 
         #switchingImage {
-            width: 100%; /* Make image width 100% of the container */
-            height: 100%; /* Make image height 100% of the container */
-            object-fit: contain; /* Maintain aspect ratio, ensure image fits within the box */
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the image fully fills the container */
             position: absolute;
             top: 0;
             left: 0;
-            transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
+            transition: opacity 1s ease-in-out;
         }
     </style>
 </head>
